@@ -8,6 +8,6 @@
 <h1 class="text-3xl font-semibold">All Campgrounds</h1>
 <ul>
 	{#each campgrounds as campground}
-		<li>{campground.title}</li>
+		<li><a href="/campgrounds/{campground._id}">{campground.title}</a></li>
 	{/each}
 </ul>
