@@ -7,6 +7,6 @@ const CampgroundSchema = new Schema({
 	location: String
 });
 
-const CampGround = model('Campground', CampgroundSchema);
+const Campground = model('Campground', CampgroundSchema);
 
-export { CampGround };
+export { Campground };
