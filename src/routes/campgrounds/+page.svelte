@@ -10,13 +10,13 @@
 </svelte:head>
 
 <div class="mx-auto max-w-2xl pb-6 pt-5 text-center lg:pb-16">
-	<h2 class="text-2xl font-bold sm:text-3xl md:text-4xl dark:text-white">Campgrounds</h2>
+	<h2 class="text-2xl font-bold dark:text-white sm:text-3xl md:text-4xl">Campgrounds</h2>
 </div>
 
 <div class="mx-auto space-y-7 sm:max-w-2xl md:max-w-4xl">
 	{#each campgrounds as campground}
 		<div
-			class="group rounded-xl border bg-white shadow-sm hover:shadow-lg sm:flex dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-neutral-700/70"
+			class="group rounded-xl border bg-white shadow-sm hover:shadow-lg dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-neutral-700/70 sm:flex"
 		>
 			<div
 				class="relative w-full shrink-0 overflow-hidden rounded-t-xl pt-[40%] sm:max-w-60 sm:rounded-s-xl md:w-4/12 md:max-w-xs md:rounded-se-none"

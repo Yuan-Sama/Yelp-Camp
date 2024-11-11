@@ -7,12 +7,10 @@
 		{ link: '/campgrounds', title: 'Campgrounds' },
 		{ link: '/campgrounds/new', title: 'New Campground' }
 	];
-
-	$inspect($page);
 </script>
 
 <header
-	class="fixed left-0 top-0 z-50 flex max-h-24 w-full flex-wrap border-b border-gray-200 bg-white py-1 shadow-md sm:flex-nowrap sm:justify-start md:flex-nowrap md:justify-start dark:border-neutral-700 dark:bg-neutral-800"
+	class="fixed left-0 top-0 z-50 flex max-h-24 w-full flex-wrap border-b border-gray-200 bg-white py-1 shadow-md dark:border-neutral-700 dark:bg-neutral-800 sm:flex-nowrap sm:justify-start md:flex-nowrap md:justify-start"
 >
 	<nav
 		class="relative mx-auto w-full max-w-[85rem] px-4 py-2 sm:px-6 md:flex md:items-center md:justify-between md:gap-3 lg:px-8"
@@ -29,7 +27,7 @@
 			<!-- Collapse Button -->
 			<button
 				type="button"
-				class="hs-collapse-toggle relative flex size-9 items-center justify-center rounded-lg border border-gray-200 text-[12px] font-medium text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 md:hidden dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+				class="hs-collapse-toggle relative flex size-9 items-center justify-center rounded-lg border border-gray-200 text-[12px] font-medium text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 md:hidden"
 				id="hs-header-base-collapse"
 				aria-expanded="false"
 				aria-controls="hs-header-base"

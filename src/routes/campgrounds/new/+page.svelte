@@ -4,22 +4,65 @@
 </script>
 
 <svelte:head>
-	<title>Yelp Camp - Create new campground</title>
+	<title>Yelp Camp - New Campground</title>
 </svelte:head>
 
-<h2 class="semi-bold text-2xl">Create new campground</h2>
-<form method="post">
-	<div class="my-3">
-		<label for="title">Title</label>
-		<input class="border border-solid border-stone-400" type="text" name="title" id="title" />
-	</div>
-	<div class="mb-3">
-		<label for="location">Location</label>
-		<input class="border border-solid border-stone-400" type="text" name="location" id="location" />
-	</div>
-	<button class="bg-slate-200">Create</button>
-</form>
+<div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+	<div class="mx-auto max-w-2xl">
+		<div class="text-center">
+			<h2 class="text-xl font-bold text-gray-800 dark:text-white sm:text-3xl">New Campground</h2>
+		</div>
 
-<div class="mt-10">
-	<a href="/campgrounds">All Campgrounds</a>
+		<div
+			class="relative z-10 mt-5 rounded-xl border bg-white p-4 dark:border-neutral-700 dark:bg-neutral-900 sm:mt-10 md:p-10"
+		>
+			<form method="POST">
+				<div class="mb-4 sm:mb-8">
+					<label for="title" class="mb-2 block text-sm font-medium dark:text-white">Title</label>
+					<input
+						type="text"
+						id="title"
+						class="block w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+						placeholder="Title"
+						name="title"
+					/>
+				</div>
+				<div class="mb-4 sm:mb-8">
+					<label for="title" class="mb-2 block text-sm font-medium dark:text-white">Location</label>
+					<input
+						type="text"
+						id="location"
+						class="block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+						placeholder="Location"
+						name="location"
+					/>
+				</div>
+
+				<div>
+					<label for="description" class="mb-2 block text-sm font-medium dark:text-white"
+						>Description</label
+					>
+					<div class="mt-1">
+						<textarea
+							id="description"
+							name="description"
+							rows="3"
+							class="block w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+							placeholder="Leave your description here..."
+						></textarea>
+					</div>
+				</div>
+
+				<div class="mt-6 grid">
+					<button
+						type="submit"
+						class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-4 py-3 text-sm font-medium text-white hover:bg-blue-700 focus:bg-blue-700 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+						>Create</button
+					>
+				</div>
+			</form>
+		</div>
+		<!-- End Card -->
+	</div>
 </div>
+<!-- End Comment Form -->
