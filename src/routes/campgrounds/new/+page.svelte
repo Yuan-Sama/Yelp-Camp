@@ -19,3 +19,7 @@
 	</div>
 	<button class="bg-slate-200">Create</button>
 </form>
+
+<div class="mt-10">
+	<a href="/campgrounds">All Campgrounds</a>
+</div>

@@ -10,7 +10,7 @@
 </svelte:head>
 
 <h1 class="text-3xl font-semibold">All Campgrounds</h1>
-<div>
+<div class="my-5">
 	<a href="/campgrounds/new">Add Campground</a>
 </div>
 <ul>

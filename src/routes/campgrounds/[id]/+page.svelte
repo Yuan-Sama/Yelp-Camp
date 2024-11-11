@@ -11,4 +11,9 @@
 <h1 class="text-3xl font-semibold">{campground.title}</h1>
 <h3 class="text-xl">{campground.location}</h3>
 
-<a href="/campgrounds">All campgrounds</a>
+<div class="mt-5">
+	<a href="/campgrounds/{campground._id}/edit">Edit</a>
+</div>
+<div class="mt-5">
+	<a href="/campgrounds">All Campgrounds</a>
+</div>

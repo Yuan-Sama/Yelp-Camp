@@ -2,7 +2,7 @@ import { Campground } from '$server/model';
 import { error } from '@sveltejs/kit';
 import mongoose from 'mongoose';
 
-/** @type {import('./$types').PageServerLoad} */
+/** @type {import('./$types').LayoutServerLoad} */
 export async function load({ params }) {
 	const { id } = params;
 	if (!mongoose.Types.ObjectId.isValid(id)) error(404, { message: 'Campground not found' });
