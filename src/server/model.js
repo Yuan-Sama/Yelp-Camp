@@ -4,7 +4,8 @@ const CampgroundSchema = new Schema({
 	title: String,
 	price: String,
 	description: String,
-	location: String
+	location: String,
+	image: String
 });
 
 const Campground = model('Campground', CampgroundSchema);
