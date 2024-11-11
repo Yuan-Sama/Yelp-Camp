@@ -125,7 +125,7 @@
 </header>
 
 <!-- ========== MAIN CONTENT ========== -->
-<main id="content" class="mt-16 shrink-0">
+<main class="mt-16 shrink-0">
 	<div class="mx-auto min-h-[40rem] max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8">
 		{@render children()}
 	</div>
