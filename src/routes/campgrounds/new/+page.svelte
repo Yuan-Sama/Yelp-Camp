@@ -78,7 +78,7 @@
 						<textarea
 							id="description"
 							name="description"
-							rows="3"
+							rows="5"
 							class="block w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
 							placeholder="Leave your description here..."
 						></textarea>
@@ -87,14 +87,14 @@
 
 				<div class="mt-6 flex justify-between gap-10">
 					<a
-						class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-4 py-3 text-sm font-medium text-white hover:bg-blue-700 focus:bg-blue-700 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+						class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent bg-red-600 px-4 py-3 text-sm font-medium text-white hover:bg-red-700 focus:bg-red-700 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
 						href="/campgrounds"
 					>
 						Back to Campgrounds
 					</a>
 					<button
 						type="submit"
-						class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-blue-600 border-transparent px-4 py-3 text-sm font-medium text-blue-600 hover:bg-blue-700 hover:text-white focus:bg-blue-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+						class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-green-600 px-4 py-3 text-sm font-medium text-green-600 hover:bg-green-700 hover:text-white focus:border-transparent focus:bg-green-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
 					>
 						Create
 					</button>
@@ -104,4 +104,3 @@
 		<!-- End Card -->
 	</div>
 </div>
-<!-- End Comment Form -->

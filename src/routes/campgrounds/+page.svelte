@@ -16,13 +16,13 @@
 <div class="mx-auto space-y-7 sm:max-w-2xl md:max-w-4xl">
 	{#each campgrounds as campground}
 		<div
-			class="group rounded-xl border bg-white shadow-sm hover:shadow-lg dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-neutral-700/70 sm:flex"
+			class="group rounded-xl border bg-white shadow-sm hover:shadow-xl dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-neutral-700/70 sm:flex"
 		>
 			<div
 				class="relative w-full shrink-0 overflow-hidden rounded-t-xl pt-[40%] sm:max-w-60 sm:rounded-s-xl md:w-4/12 md:max-w-xs md:rounded-se-none"
 			>
 				<img
-					class="absolute start-0 top-0 size-full rounded-t-xl object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 group-focus:scale-105"
+					class="absolute start-0 top-0 size-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 group-focus:scale-105"
 					src={campground.image}
 					alt="Campground preview"
 				/>
@@ -37,7 +37,7 @@
 						{campground.description}
 					</p>
 					<a
-						class="mt-2 inline-flex items-center justify-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:bg-blue-700 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+						class="mt-2 inline-flex items-center justify-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:bg-blue-700 focus:outline-none disabled:pointer-events-none disabled:opacity-50 md:ml-auto md:w-1/2"
 						href="/campgrounds/{campground._id}"
 					>
 						More Detail
