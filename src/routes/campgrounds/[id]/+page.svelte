@@ -15,5 +15,10 @@
 	<a href="/campgrounds/{campground._id}/edit">Edit</a>
 </div>
 <div class="mt-5">
+	<form action="?/delete" method="post">
+		<button>Delete</button>
+	</form>
+</div>
+<div class="mt-5">
 	<a href="/campgrounds">All Campgrounds</a>
 </div>

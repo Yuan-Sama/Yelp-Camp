@@ -9,7 +9,7 @@
 </svelte:head>
 
 <h2 class="semi-bold text-2xl">Edit Campground</h2>
-<form method="post">
+<form method="POST">
 	<div class="my-3">
 		<label for="title">Title</label>
 		<input
