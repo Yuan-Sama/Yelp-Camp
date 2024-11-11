@@ -13,6 +13,6 @@ export const actions = {
 		const newCampground = Object.fromEntries(data);
 		const campground = new Campground(newCampground);
 		await campground.save();
-		redirect(303, `/campgrounds/${campground._id.toHexString()}`);
+		redirect(303, `/campgrounds/${campground._id}`);
 	}
 };
