@@ -1,6 +1,8 @@
 <script>
-	/** @type {{ data: import('./$types').PageData }} */
-	let { data } = $props();
+	import { browser } from '$app/environment';
+
+	/** @type {{ data: import('./$types').PageData, form: import('./$types').ActionData }} */
+	let { data, form } = $props();
 
 	/**
 	 * @param {SubmitEvent & { currentTarget: EventTarget & HTMLFormElement; }} $event
@@ -12,6 +14,17 @@
 		}
 
 		$event.currentTarget.classList.add('was-validated');
+	}
+
+	// TODO: reset form
+	if (browser && form?.validator) {
+		const keys = Object.keys(form.validator);
+		keys.forEach((k) => {
+			const input = /** @type {HTMLInputElement}*/ (document.getElementById(k));
+			if (form.validator[k].error) {
+				input.setCustomValidity(form.validator[k].error);
+			}
+		});
 	}
 </script>
 
@@ -28,7 +41,12 @@
 		<div
 			class="relative z-10 mt-5 rounded-xl border bg-white p-4 dark:border-neutral-700 dark:bg-neutral-900 sm:mt-10 md:p-10"
 		>
-			<form method="POST" onsubmit={(e) => validateForm(e)} novalidate>
+			<form
+				method="POST"
+				onsubmit={(e) => validateForm(e)}
+				novalidate
+				class={form?.validator ? 'was-validated' : ''}
+			>
 				<!-- Title -->
 				<div class="mb-4 sm:mb-7">
 					<label for="title" class="mb-2 block text-sm font-medium dark:text-white">Title</label>
@@ -38,6 +56,7 @@
 						class="form-control block w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
 						placeholder="Title"
 						name="title"
+						value={form?.validator['title']?.submittedValue}
 						required
 					/>
 					<div class="invalid-feedback">Please provide a valid title</div>
@@ -54,6 +73,7 @@
 						class="form-control block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
 						placeholder="Location"
 						name="location"
+						value={form?.validator['location']?.submittedValue}
 						required
 					/>
 					<div class="invalid-feedback">Please provide a valid location</div>
@@ -70,6 +90,7 @@
 						class="form-control block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
 						placeholder="https://your.image.png"
 						name="image"
+						value={form?.validator['image']?.submittedValue}
 						required
 					/>
 					<div class="invalid-feedback">Please provide a valid image url</div>
@@ -89,9 +110,12 @@
 							class="form-control block w-[1%] min-w-0 flex-auto rounded-e-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
 							placeholder="$0.00"
 							name="price"
+							value={form?.validator['price'].submittedValue}
 							required
 						/>
-						<div class="invalid-feedback">Please provide a valid price</div>
+						<div class="invalid-feedback">
+							{form?.validator['price'].error ?? 'Please provide a valid price'}
+						</div>
 						<div class="valid-feedback">Looks good!</div>
 					</div>
 				</div>
@@ -107,8 +131,8 @@
 							rows="5"
 							class="form-control block w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
 							placeholder="Leave your description here..."
-							required
-						></textarea>
+							required>{form?.validator['description'].submittedValue}</textarea
+						>
 						<div class="invalid-feedback">Please provide a description</div>
 						<div class="valid-feedback">Looks good!</div>
 					</div>
