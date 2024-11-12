@@ -52,7 +52,7 @@
 						class="mt-2 inline-flex items-center justify-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:bg-blue-700 focus:outline-none disabled:pointer-events-none disabled:opacity-50 md:mr-auto md:w-2/3"
 						href="/campgrounds/{campground._id}"
 					>
-						More Detail
+						View {campground.title}
 					</a>
 				</div>
 			</div>
