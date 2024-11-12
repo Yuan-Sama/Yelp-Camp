@@ -15,17 +15,6 @@
 
 		$event.currentTarget.classList.add('was-validated');
 	}
-
-	// TODO: reset form
-	if (browser && form?.validator) {
-		const keys = Object.keys(form.validator);
-		keys.forEach((k) => {
-			const input = /** @type {HTMLInputElement}*/ (document.getElementById(k));
-			if (form.validator[k].error) {
-				input.setCustomValidity(form.validator[k].error);
-			}
-		});
-	}
 </script>
 
 <svelte:head>

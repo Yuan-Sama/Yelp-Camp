@@ -23,7 +23,7 @@ export const actions = {
 				.map((k) => {
 					return {
 						[k]: {
-							submittedValue: newCampground[k],
+							submittedValue: errors[k] ? undefined : newCampground[k],
 							error: errors[k]
 						}
 					};
