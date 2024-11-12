@@ -88,7 +88,7 @@
 							>$</span
 						>
 						<input
-							type="number"
+							type="text"
 							id="price"
 							class="form-control block w-[1%] min-w-0 flex-auto rounded-e-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
 							placeholder="$0.00"
