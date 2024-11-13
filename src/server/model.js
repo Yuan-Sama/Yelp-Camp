@@ -1,6 +1,6 @@
-import { Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 
-const CampgroundSchema = new Schema({
+const CampgroundSchema = new mongoose.Schema({
 	title: String,
 	price: String,
 	description: String,
@@ -8,6 +8,7 @@ const CampgroundSchema = new Schema({
 	image: String
 });
 
-const Campground = model('Campground', CampgroundSchema);
+// https://stackoverflow.com/questions/67042963/cannot-overwrite-mongoose-model-once-compiled-with-nextjs
+const Campground = mongoose.models.Campground || mongoose.model('Campground', CampgroundSchema);
 
 export { Campground };

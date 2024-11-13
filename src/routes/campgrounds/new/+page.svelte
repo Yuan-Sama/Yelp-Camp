@@ -1,8 +1,6 @@
 <script>
-	import { browser } from '$app/environment';
-
-	/** @type {{ data: import('./$types').PageData, form: import('./$types').ActionData }} */
-	let { data, form } = $props();
+	/** @type {{ form: import('./$types').ActionData }} */
+	let { form } = $props();
 
 	/**
 	 * @param {SubmitEvent & { currentTarget: EventTarget & HTMLFormElement; }} $event

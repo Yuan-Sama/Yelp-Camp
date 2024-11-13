@@ -1,6 +1,6 @@
 <script>
-	/** @type {{ data: import('./$types').PageData }} */
-	let { data } = $props();
+	/** @type {{ data: import('./$types').PageData, form: import('./$types').ActionData }} */
+	let { data, form } = $props();
 	const { campground } = data;
 
 	/**
@@ -29,7 +29,12 @@
 		<div
 			class="relative z-10 mt-5 rounded-xl border bg-white p-4 dark:border-neutral-700 dark:bg-neutral-900 sm:mt-10 md:p-10"
 		>
-			<form method="POST" onsubmit={(e) => validateForm(e)} novalidate>
+			<form
+				method="POST"
+				onsubmit={(e) => validateForm(e)}
+				novalidate
+				class={form?.validator ? 'was-validated' : ''}
+			>
 				<!-- Title -->
 				<div class="mb-4 sm:mb-7">
 					<label for="title" class="mb-2 block text-sm font-medium dark:text-white">Title</label>
@@ -38,7 +43,7 @@
 						id="title"
 						class="form-control block w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
 						placeholder="Title"
-						value={campground.title}
+						value={form?.validator['title'].submittedValue ?? campground.title}
 						name="title"
 						required
 					/>
@@ -55,7 +60,7 @@
 						id="location"
 						class="form-control block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
 						placeholder="Location"
-						value={campground.location}
+						value={form?.validator['location'].submittedValue ?? campground.location}
 						name="location"
 						required
 					/>
@@ -72,7 +77,7 @@
 						id="image"
 						class="form-control block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
 						placeholder="https://your.image.png"
-						value={campground.image}
+						value={form?.validator['image'].submittedValue ?? campground.image}
 						name="image"
 						required
 					/>
@@ -92,11 +97,15 @@
 							id="price"
 							class="form-control block w-[1%] min-w-0 flex-auto rounded-e-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
 							placeholder="$0.00"
-							value={campground.price}
+							value={form?.validator['price'].error
+								? form?.validator['price'].submittedValue
+								: campground.price}
 							name="price"
 							required
 						/>
-						<div class="invalid-feedback">Please provide a valid price</div>
+						<div class="invalid-feedback">
+							{form?.validator['price'].error ?? 'Please provide a valid price'}
+						</div>
 						<div class="valid-feedback">Looks good!</div>
 					</div>
 				</div>
@@ -112,9 +121,9 @@
 							rows="5"
 							class="form-control block w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-[1px] focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
 							placeholder="Leave your description here..."
-							value={campground.description}
 							required
-						></textarea>
+							>{form?.validator['description'].submittedValue ?? campground.description}</textarea
+						>
 						<div class="invalid-feedback">Please provide a description</div>
 						<div class="valid-feedback">Looks good!</div>
 					</div>
